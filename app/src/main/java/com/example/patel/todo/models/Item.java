@@ -6,10 +6,20 @@ import java.sql.Date;
 /**
  * Created by patel on 6/13/2016.
  */
-public class Item implements Serializable{
+public class Item implements Serializable, Comparable<Item>{
+
+    @Override
+    public int compareTo(Item another) {
+        if(this.getPriority() == another.getPriority())
+        {
+            return this.getFinishDate().compareTo(another.getFinishDate());
+        }
+
+        return new Integer(this.getPriority().ordinal()).compareTo(new Integer(another.getPriority().ordinal()));
+    }
 
     public enum Priority{
-        LOW, MEDIUM, HIGH
+        HIGH, MEDIUM, LOW
     }
 
     private int id;

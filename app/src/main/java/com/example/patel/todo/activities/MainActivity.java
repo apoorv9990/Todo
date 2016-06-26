@@ -25,6 +25,7 @@ import com.example.patel.todo.models.Item;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -177,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
                         itemsListView.setVisibility(View.VISIBLE);
                     }
 
+                    Collections.sort(items);
+
                     mItemAdapter.notifyDataSetChanged();
                 }
             }
@@ -191,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             DatabaseHelper dbHelper = DatabaseHelper.getInstance(MainActivity.this);
 
             items = dbHelper.readItems();
+            Collections.sort(items);
 
             return null;
         }

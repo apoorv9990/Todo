@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="action_add">Add Item</string>
+    <string-array name="priority_values">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+</resources>
